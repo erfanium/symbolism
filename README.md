@@ -11,16 +11,20 @@ export function getPosts() {
    return Posts.find({})
 }
 
-export async function createPost(params) {
-   const response = await Posts.create(params)
-   response[statusCodeSym] = 201
-   return response
+export function createPost(params) {
+   return Posts.create(params)
 }
 
 export function echoUrl(params) {
    return {
-      [bodySym]: params[urlSym],
+      [bodySym]: params[url],
       [statusCodeSym]: 200
+   }
+}
+
+export function echoHeaders(params) {
+   return {
+      [bodySym]: params[headersSym],
    }
 }
 
@@ -29,6 +33,8 @@ export function echoUrl(params) {
 symbolism.get('/posts', getPosts)
 symbolism.post('/posts', createPost)
 symbolism.get('/url', echoUrl)
+symbolism.get('/headers', echoHeaders)
+
 ```
 
 ### Why?
