@@ -7,17 +7,17 @@ Stage: idea
 ```js
 import { statusCodeSym, bodySym, urlSym } from 'symbolism'
 
-function getPosts() {
+export function getPosts() {
    return Posts.find({})
 }
 
-function createPost(params) {
+export function createPost(params) {
    const response = await Posts.create(params)
    response[statusCodeSym] = 201
    return response
 }
 
-function echoUrl(params) {
+export function echoUrl(params) {
    return {
       [bodySym]: params[urlSym],
       [statusCodeSym]: 200
