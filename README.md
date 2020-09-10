@@ -1,10 +1,12 @@
 # symbolism
-RPC-based HTTP micro-framework by using javascript's symbol magics
+RPC-based HTTP micro-framework with using javascript's symbol magics
 
 Stage: idea
 
 ### Demo
 ```js
+import { statusCodeSym, bodySym, urlSym } from 'symbolism'
+
 function getPosts() {
    return Posts.find({})
 }
