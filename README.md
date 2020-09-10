@@ -11,7 +11,7 @@ export function getPosts() {
    return Posts.find({})
 }
 
-export function createPost(params) {
+export async function createPost(params) {
    const response = await Posts.create(params)
    response[statusCodeSym] = 201
    return response
