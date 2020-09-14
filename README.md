@@ -17,7 +17,7 @@ export function createPost(params) {
 
 export function echoUrl(params) {
    return {
-      [bodySym]: params[url],
+      [bodySym]: params[urlSym],
       [statusCodeSym]: 200
    }
 }
